@@ -5,10 +5,18 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content [fullscreen]="true">
+< [fullscreen]="true">
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/cadastro">
       <ion-icon name="add" ></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
+
+<p *ngFor="let usuario of listaUsuarios">
+  {{usuario.nome}}
+</p>
+
+
 </ion-content>

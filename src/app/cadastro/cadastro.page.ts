@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Usuario } from '../models/Usuario';
 
 @Component({
   selector: 'app-cadastro',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroPage implements OnInit {
 
-  constructor() { }
+  usuario: Usuario = new Usuario{};
+
+  confirmaSenha = '';
+
+  constructor(public storage: StorageService, public router: Router) { }
 
   ngOnInit() {
+  }
+
+  salvar() {
+    this.storage.set(this.Usuario.cpf, this.usuario);
+    this.router.navigateByUrl('/home');
   }
 
 }
